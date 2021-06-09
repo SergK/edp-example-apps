@@ -1,0 +1,12 @@
+apiVersion: v2.edp.epam.com/v1alpha1
+kind: CDPipeline
+metadata:
+  name: feature-aqa
+spec:
+  applicationsToPromote:
+  - petclinic-clone
+  - react-create
+  input_docker_streams:
+  - petclinic-qa-petclinic-clone-verified
+  - react-create-master
+  name: feature-aqa

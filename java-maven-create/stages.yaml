@@ -1,0 +1,54 @@
+---
+apiVersion: v2.edp.epam.com/v1alpha1
+kind: Stage
+metadata:
+  name: java-create-dev
+spec:
+  cdPipeline: java-create
+  description: dev
+  jobProvisioning: default
+  name: dev
+  order: 0
+  qualityGates:
+  - qualityGateType: manual
+    stepName: approve
+  source:
+    library: {}
+    type: default
+  triggerType: Manual
+---
+apiVersion: v2.edp.epam.com/v1alpha1
+kind: Stage
+metadata:
+  name: java-create-sit
+spec:
+  cdPipeline: java-create
+  description: sit
+  jobProvisioning: default
+  name: sit
+  order: 1
+  qualityGates:
+  - qualityGateType: manual
+    stepName: approve
+  source:
+    library: {}
+    type: default
+  triggerType: Manual
+---
+apiVersion: v2.edp.epam.com/v1alpha1
+kind: Stage
+metadata:
+  name: java-create-qa
+spec:
+  cdPipeline: java-create
+  description: qa
+  jobProvisioning: default
+  name: qa
+  order: 2
+  qualityGates:
+  - qualityGateType: manual
+    stepName: approve
+  source:
+    library: {}
+    type: default
+  triggerType: Manual

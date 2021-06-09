@@ -1,0 +1,21 @@
+apiVersion: v2.edp.epam.com/v1alpha1
+kind: Codebase
+metadata:
+  name: react-create
+spec:
+  buildTool: NPM
+  ciTool: Jenkins
+  defaultBranch: master
+  deploymentScript: helm-chart
+  framework: React
+  gitServer: gerrit
+  jenkinsSlave: npm
+  jobProvisioning: default
+  lang: JavaScript
+  route:
+    path: /
+    site: route
+  strategy: create
+  type: application
+  versioning:
+    type: default

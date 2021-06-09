@@ -1,0 +1,10 @@
+apiVersion: v2.edp.epam.com/v1alpha1
+kind: CDPipeline
+metadata:
+  name: petclinic
+spec:
+  applicationsToPromote:
+  - petclinic-clone
+  input_docker_streams:
+  - petclinic-clone-master
+  name: petclinic

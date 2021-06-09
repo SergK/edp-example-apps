@@ -1,0 +1,38 @@
+---
+apiVersion: v2.edp.epam.com/v1alpha1
+kind: Stage
+metadata:
+  name: feature-aqa-feature
+spec:
+  cdPipeline: feature-aqa
+  description: Env for feature development
+  jobProvisioning: default
+  name: feature
+  order: 0
+  qualityGates:
+  - autotestName: autotest
+    branchName: master
+    qualityGateType: autotests
+    stepName: autotest
+  source:
+    library: {}
+    type: default
+  triggerType: Manual
+---
+apiVersion: v2.edp.epam.com/v1alpha1
+kind: Stage
+metadata:
+  name: feature-aqa-aqa
+spec:
+  cdPipeline: feature-aqa
+  description: Implement Autotest for feature
+  jobProvisioning: default
+  name: aqa
+  order: 1
+  qualityGates:
+  - qualityGateType: manual
+    stepName: approve
+  source:
+    library: {}
+    type: default
+  triggerType: Manual

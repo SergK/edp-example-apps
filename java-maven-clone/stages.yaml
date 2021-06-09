@@ -1,0 +1,39 @@
+---
+apiVersion: v2.edp.epam.com/v1alpha1
+kind: Stage
+metadata:
+  name: petclinic-sit
+spec:
+  cdPipeline: petclinic
+  description: sit
+  jobProvisioning: default
+  name: sit
+  order: 0
+  qualityGates:
+  - autotestName: autotest
+    branchName: master
+    qualityGateType: autotests
+    stepName: autotest
+  source:
+    library: {}
+    type: default
+  triggerType: Manual
+---
+apiVersion: v2.edp.epam.com/v1alpha1
+kind: Stage
+metadata:
+  name: petclinic-qa
+spec:
+  cdPipeline: petclinic
+  description: qa
+  jobProvisioning: default
+  name: qa
+  order: 1
+  qualityGates:
+  - qualityGateType: manual
+    stepName: approve
+  source:
+    library: {}
+    type: default
+  triggerType: Manual
+

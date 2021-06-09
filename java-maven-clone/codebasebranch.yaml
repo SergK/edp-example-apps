@@ -1,0 +1,9 @@
+apiVersion: v2.edp.epam.com/v1alpha1
+kind: CodebaseBranch
+metadata:
+  name: petclinic-master
+spec:
+  branchName: master
+  codebaseName: petclinic-clone
+  fromCommit: ""
+  release: false

@@ -1,0 +1,9 @@
+apiVersion: v2.edp.epam.com/v1alpha1
+kind: CodebaseBranch
+metadata:
+  name: java-maven-create-master
+spec:
+  branchName: master
+  codebaseName: java-maven-create
+  fromCommit: ""
+  release: false

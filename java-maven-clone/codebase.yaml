@@ -1,0 +1,23 @@
+apiVersion: v2.edp.epam.com/v1alpha1
+kind: Codebase
+metadata:
+  name: petclinic-clone
+spec:
+  buildTool: Maven
+  ciTool: Jenkins
+  defaultBranch: master
+  deploymentScript: helm-chart
+  framework: java11
+  gitServer: gerrit
+  jenkinsSlave: maven-java11
+  jobProvisioning: default
+  lang: Java
+  repository:
+    url: https://github.com/SergK/spring-petclinic.git
+  route:
+    path: /
+    site: route
+  strategy: clone
+  type: application
+  versioning:
+    type: default

@@ -1,0 +1,9 @@
+apiVersion: v2.edp.epam.com/v1alpha1
+kind: CodebaseBranch
+metadata:
+  name: react-create-master
+spec:
+  branchName: master
+  codebaseName: react-create
+  fromCommit: ""
+  release: false

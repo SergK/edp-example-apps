@@ -1,0 +1,10 @@
+apiVersion: v2.edp.epam.com/v1alpha1
+kind: CDPipeline
+metadata:
+  name: java-create
+spec:
+  applicationsToPromote:
+  - java-maven-create
+  input_docker_streams:
+  - java-maven-create-master
+  name: java-create
